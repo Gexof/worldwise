@@ -1,5 +1,12 @@
+import Navbar from "../components/Navbar";
+
 function Pricing() {
-  return <div>Pricing</div>;
+  return (
+    <div>
+      <Navbar />
+      Pricing
+    </div>
+  );
 }
 
 export default Pricing;

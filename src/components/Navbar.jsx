@@ -2,13 +2,25 @@ import { NavLink } from "react-router";
 
 function Navbar() {
   const linkStyles = ({ isActive }) =>
-    `${isActive ? "text-indigo-400" : "text-gray-400 hover:text-white"}`;
+    `transition-colors duration-200 ${
+      isActive ? "text-[#00C46A]" : "text-white/80 hover:text-white"
+    }`;
 
   return (
-    <nav>
-      <ul>
+    <nav className="mx-auto flex w-full max-w-7xl items-center justify-between py-6">
+      {/* Logo */}
+      <NavLink to="/">
+        <img
+          src="/logo.png"
+          alt="Worldwise logo"
+          className="h-10 w-auto object-contain"
+        />
+      </NavLink>
+
+      {/* Navigation Links */}
+      <ul className="flex items-center gap-8 text-sm font-semibold">
         <li>
-          <NavLink to="/" className={linkStyles}>
+          <NavLink to="/" end className={linkStyles}>
             Home
           </NavLink>
         </li>
@@ -22,6 +34,15 @@ function Navbar() {
         <li>
           <NavLink to="/pricing" className={linkStyles}>
             Pricing
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/login"
+            className="rounded-lg bg-white px-5 py-2.5 text-[#2D3439] transition-colors hover:bg-[#00C46A]"
+          >
+            Login
           </NavLink>
         </li>
       </ul>
