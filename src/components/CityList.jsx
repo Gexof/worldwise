@@ -1,7 +1,10 @@
 import { MapPin } from "lucide-react";
 import CityItem from "./CityItem";
+import { useCities } from "../contexts/CitiesContext";
 
-function CityList({ cities, isLoading }) {
+function CityList() {
+  const { cities, isLoading } = useCities();
+
   if (isLoading) {
     return (
       <p className="py-8 text-center text-sm text-gray-400">

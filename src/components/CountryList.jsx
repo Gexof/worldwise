@@ -1,7 +1,10 @@
 import { Globe } from "lucide-react";
 import CountryItem from "./CountryItem";
+import { useCities } from "../contexts/CitiesContext";
 
-function CountryList({ cities, isLoading }) {
+function CountryList() {
+  const { cities, isLoading } = useCities();
+
   if (isLoading) {
     return (
       <p className="py-8 text-center text-sm text-gray-400">
