@@ -1,17 +1,17 @@
-import { Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 import AppNav from "./AppNav";
 
 function Sidebar() {
   return (
-    <aside className="flex h-full w-[380px] shrink-0 flex-col bg-[#242A2E] px-6 py-8 text-white">
+    <aside className="flex h-full w-95 shrink-0 flex-col bg-[#242A2E] px-6 py-8 text-white">
       {/* Logo */}
-      <div className="mb-10 flex justify-center">
+      <NavLink to="/" className="mb-10 flex justify-center">
         <img
           src="/logo.png"
-          alt="Worldwise"
-          className="h-12 w-auto object-contain"
+          alt="Worldwise logo"
+          className="h-10 w-auto object-contain"
         />
-      </div>
+      </NavLink>
 
       {/* Navigation */}
       <AppNav />
