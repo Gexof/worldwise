@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 
 function AppLayout() {
   return (
-    <div>
+    <div className="flex h-screen overflow-hidden">
       <Sidebar />
       <Map />
     </div>
