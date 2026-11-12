@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, CalendarDays, MapPin, StickyNote } from "lucide-react";
-import { useNavigate } from "react-router";
+import BackButton from "./BackButton";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -16,8 +16,6 @@ function Form() {
   const [country, setCountry] = useState("");
   const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [notes, setNotes] = useState("");
-
-  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -121,14 +119,7 @@ function Form() {
           Add
         </button>
 
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          className="flex items-center justify-center gap-2 rounded-lg border border-white/10 px-5 py-3 text-sm font-medium text-gray-300 transition-colors hover:bg-white/5 hover:text-white"
-        >
-          <ArrowLeft size={16} />
-          Back
-        </button>
+        <BackButton />
       </div>
     </form>
   );

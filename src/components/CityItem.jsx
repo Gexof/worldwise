@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { useCities } from "../contexts/CitiesContext";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -8,13 +9,22 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
+  const { currentCity } = useCities();
   const { cityName, emoji, date, id, position } = city;
 
+  const isActive = id === currentCity?.id;
+
   return (
-    <li>
+    <li
+      className={`group flex items-center gap-3 rounded-xl border bg-[#2D3439] px-4 py-3 text-white transition-all hover:bg-[#343C42] ${
+        isActive
+          ? "border-[#00C46A]"
+          : "border-white/10 border-l-4 border-l-[#00C46A]"
+      }`}
+    >
       <Link
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
-        className="group flex items-center gap-3 rounded-xl border border-white/10 border-l-4 border-l-[#00C46A] bg-[#2D3439] px-4 py-3 text-white transition-all hover:bg-[#343C42]"
+        className="flex min-w-0 flex-1 items-center gap-3"
       >
         <span className="text-2xl">{emoji}</span>
 
@@ -25,14 +35,15 @@ function CityItem({ city }) {
             {formatDate(date)}
           </time>
         </div>
-
-        <button
-          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-lg text-gray-500 transition-colors hover:bg-red-500/10 hover:text-red-400"
-          aria-label={`Delete ${cityName}`}
-        >
-          &times;
-        </button>
       </Link>
+
+      <button
+        type="button"
+        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-lg text-gray-500 transition-colors hover:bg-red-500/10 hover:text-red-400"
+        aria-label={`Delete ${cityName}`}
+      >
+        &times;
+      </button>
     </li>
   );
 }
