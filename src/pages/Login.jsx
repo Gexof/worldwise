@@ -1,7 +1,25 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Navbar from "../components/Navbar";
+import { useAuth } from "../contexts/AuthContext";
+import { useEffect, useState } from "react";
 
 function Login() {
+  const [email, setEmail] = useState("jack@example.com");
+  const [password, setPassword] = useState("qwerty");
+  const { user, isAuthenitcated, login } = useAuth();
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (email && password) login(email, password);
+  };
+
+  useEffect(() => {
+    if (isAuthenitcated) navigate("/app", { replace: true });
+  }, [isAuthenitcated, navigate]);
+
   return (
     <main className="min-h-screen bg-[#242A2E] px-6 text-white">
       <div className="mx-auto max-w-7xl">
@@ -19,7 +37,7 @@ function Login() {
             </div>
 
             {/* Login Form */}
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="email"
@@ -33,6 +51,8 @@ function Login() {
                   id="email"
                   placeholder="Enter your email"
                   className="w-full rounded-lg border border-white/10 bg-[#242A2E] px-4 py-3 text-white outline-none transition focus:border-[#00C46A] placeholder:text-gray-500"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
@@ -49,6 +69,8 @@ function Login() {
                   id="password"
                   placeholder="Enter your password"
                   className="w-full rounded-lg border border-white/10 bg-[#242A2E] px-4 py-3 text-white outline-none transition focus:border-[#00C46A] placeholder:text-gray-500"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 

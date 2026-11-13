@@ -1,11 +1,19 @@
 import Map from "../components/Map";
 import Sidebar from "../components/Sidebar";
+import User from "../components/User";
 
 function AppLayout() {
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="relative flex h-screen overflow-hidden">
       <Sidebar />
-      <Map />
+
+      <div className="relative flex-1">
+        <Map />
+
+        <div className="absolute right-6 top-6 z-1000">
+          <User />
+        </div>
+      </div>
     </div>
   );
 }

@@ -30,7 +30,7 @@ function Home() {
         </h2>
 
         <Link
-          to="/app"
+          to="/login"
           className="rounded-lg bg-[#00C46A] px-8 py-4 font-semibold text-[#2D3439] transition-all duration-300 hover:bg-[#00A85A] hover:shadow-lg hover:shadow-green-500/20"
         >
           Start Tracking Now

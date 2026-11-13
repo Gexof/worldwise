@@ -52,7 +52,7 @@ function Map() {
         <button
           onClick={getPosition}
           disabled={isLoadingPosition}
-          className="absolute right-7 top-7 z-1000 flex items-center gap-2 rounded-xl border border-white/10 bg-[#242A2E]/95 px-4 py-3 text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-all hover:border-[#00C46A]/50 hover:bg-[#2D3439] disabled:cursor-not-allowed disabled:opacity-60"
+          className="absolute bottom-7 left-1/2 z-1000 flex -translate-x-1/2 items-center gap-2 rounded-xl border border-white/10 bg-[#242A2E]/95 px-4 py-3 text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-all hover:border-[#00C46A]/50 hover:bg-[#2D3439] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isLoadingPosition ? (
             <LoaderCircle size={18} className="animate-spin text-[#00C46A]" />
