@@ -37,8 +37,8 @@ function City() {
     <div className="rounded-2xl border border-white/10 bg-[#2D3439] p-6 text-white shadow-lg">
       {/* City Header */}
       <div className="mb-8 flex items-center gap-4 border-b border-white/10 pb-6">
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#242A2E] text-4xl">
-          {emoji}
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#242A2E]">
+          <span className={`fi fi-${emoji?.toLowerCase()} text-4xl`}></span>
         </div>
 
         <div className="min-w-0">

@@ -3,7 +3,7 @@ import AppNav from "./AppNav";
 
 function Sidebar() {
   return (
-    <aside className="flex h-full w-95 shrink-0 flex-col bg-[#242A2E] px-6 py-8 text-white">
+    <aside className="flex h-full w-xl shrink-0 flex-col overflow-hidden bg-[#242A2E] px-6 py-8 text-white">
       {/* Logo */}
       <NavLink to="/" className="mb-10 flex justify-center">
         <img
@@ -17,12 +17,12 @@ function Sidebar() {
       <AppNav />
 
       {/* Nested Routes */}
-      <div className="mt-8 flex-1 overflow-y-auto">
+      <div className="mt-8 min-h-0 min-w-0 flex-1 overflow-x-hidden overflow-y-auto">
         <Outlet />
       </div>
 
       {/* Footer */}
-      <footer className="mt-6 border-t border-white/10 pt-5 text-center">
+      <footer className="mt-6 shrink-0 border-t border-white/10 pt-5 text-center">
         <p className="text-xs text-gray-500">
           &copy; Copyright {new Date().getFullYear()} by Worldwise inc.
         </p>

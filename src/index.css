@@ -1,1 +1,131 @@
 @import "tailwindcss";
+
+/* DatePicker Input */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+/* Calendar Container */
+.worldwise-calendar {
+  background-color: #2d3439 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  color: white !important;
+  font-family: inherit;
+  padding: 8px;
+}
+
+/* Header */
+.worldwise-calendar .react-datepicker__header {
+  background-color: #242a2e !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px 8px 0 0 !important;
+  padding-top: 12px;
+}
+
+.worldwise-calendar .react-datepicker__current-month {
+  color: white !important;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.worldwise-calendar .react-datepicker__day-name {
+  color: #9ca3af !important;
+  font-size: 12px;
+  margin: 4px;
+}
+
+/* Days */
+.worldwise-calendar .react-datepicker__day {
+  color: #d1d5db !important;
+  border-radius: 8px;
+  margin: 4px;
+  transition: all 0.2s;
+}
+
+.worldwise-calendar .react-datepicker__day:hover {
+  background-color: #343c42 !important;
+  color: white !important;
+}
+
+/* Selected Day */
+.worldwise-calendar .react-datepicker__day--selected,
+.worldwise-calendar .react-datepicker__day--keyboard-selected {
+  background-color: #00c46a !important;
+  color: #242a2e !important;
+  font-weight: 700;
+}
+
+.worldwise-calendar .react-datepicker__day--today {
+  border: 1px solid #00c46a;
+  font-weight: 700;
+}
+
+/* Outside Month */
+.worldwise-calendar .react-datepicker__day--outside-month {
+  color: #6b7280 !important;
+}
+
+/* Navigation Arrows */
+.worldwise-calendar .react-datepicker__navigation {
+  top: 12px;
+  width: 28px;
+  height: 28px;
+}
+
+.worldwise-calendar .react-datepicker__navigation--previous {
+  left: 12px;
+}
+
+.worldwise-calendar .react-datepicker__navigation--next {
+  right: 12px;
+}
+
+.worldwise-calendar .react-datepicker__navigation-icon {
+  position: relative;
+  top: 0;
+}
+
+.worldwise-calendar .react-datepicker__navigation-icon::before {
+  border-color: #00c46a !important;
+  border-width: 2px 2px 0 0;
+  width: 7px;
+  height: 7px;
+  top: 9px;
+}
+
+.worldwise-calendar .react-datepicker__navigation:hover *::before {
+  border-color: #00a85a !important;
+}
+
+/* Remove Triangle */
+.worldwise-calendar .react-datepicker__triangle {
+  display: none !important;
+}
+
+/* Worldwise Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #242a2e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d484e;
+  border-radius: 10px;
+  border: 1px solid #242a2e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00c46a;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3d484e #242a2e;
+}

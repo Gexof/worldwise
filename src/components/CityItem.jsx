@@ -9,10 +9,15 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
-  const { currentCity } = useCities();
+  const { currentCity, deleteCity } = useCities();
   const { cityName, emoji, date, id, position } = city;
 
   const isActive = id === currentCity?.id;
+
+  function handleClick(e) {
+    e.preventDefault();
+    deleteCity(id);
+  }
 
   return (
     <li
@@ -26,7 +31,7 @@ function CityItem({ city }) {
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
         className="flex min-w-0 flex-1 items-center gap-3"
       >
-        <span className="text-2xl">{emoji}</span>
+        <span className={`fi fi-${emoji.toLowerCase()} text-xl`}></span>
 
         <div className="min-w-0 flex-1">
           <h3 className="truncate text-sm font-semibold">{cityName}</h3>
@@ -41,6 +46,7 @@ function CityItem({ city }) {
         type="button"
         className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-lg text-gray-500 transition-colors hover:bg-red-500/10 hover:text-red-400"
         aria-label={`Delete ${cityName}`}
+        onClick={handleClick}
       >
         &times;
       </button>
