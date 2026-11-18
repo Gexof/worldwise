@@ -143,6 +143,18 @@
         "lng": "2.8179931640625004"
       },
       "id": "eas08bRZsUU"
+    },
+    {
+      "cityName": "Castelo Branco",
+      "country": "Portugal",
+      "emoji": "PT",
+      "date": "2026-11-17T14:29:50.277Z",
+      "notes": "nice",
+      "position": {
+        "lat": "39.787433886224406",
+        "lng": "-7.717895507812501"
+      },
+      "id": "81eMQKTne5s"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

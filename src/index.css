@@ -129,3 +129,26 @@
   scrollbar-width: thin;
   scrollbar-color: #3d484e #242a2e;
 }
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes navigation-loading {
+  0% {
+    transform: translateX(-110%);
+  }
+
+  100% {
+    transform: translateX(310%);
+  }
+}
+
+.animate-navigation-loading {
+  animation: navigation-loading 1.2s ease-in-out infinite;
+}
